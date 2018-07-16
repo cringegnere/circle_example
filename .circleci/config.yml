@@ -2,7 +2,7 @@
 version: 2
 jobs:
   build:
-    parallelism: 3
+    parallelism: 1
     working_directory: ~/circle_example
     docker:
       # this is important to use proper image with browsers support
