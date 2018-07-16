@@ -39,16 +39,12 @@ jobs:
       # - run: cp .env.example .env
 
       # Database setup
-      - run: bundle exec rake db:create
-      - run: bundle exec rake db:schema:load
+      - run: rake parallel:setup
 
       # Run rspec in parallel
       - type: shell
         command: |
-          bundle exec rspec --profile 10 \
-                            --format RspecJunitFormatter \
-                            --out /tmp/test-results/rspec.xml \
-                            --format progress
+          bundle exec rails parallel:spec
 
       # Save artifacts
       - type: store_test_results

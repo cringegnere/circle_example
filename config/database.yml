@@ -7,5 +7,5 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: circle_example_test
+  database: circle_example_test<%= ENV['TEST_ENV_NUMBER'] %>
   pool: 5
