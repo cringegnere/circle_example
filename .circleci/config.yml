@@ -22,7 +22,7 @@ jobs:
       # Restore bundle cache
       - type: cache-restore
         # remove space between { {
-        key: project-name-v0-{ { checksum "Gemfile.lock" }}
+        key: project-name-v1-{ { checksum "Gemfile.lock" }}
 
       # Bundle install dependencies
       - run: bundle install --path vendor/bundle
@@ -30,7 +30,7 @@ jobs:
       # Store bundle cache
       - type: cache-save
         # remove space between { {
-        key: project-name-v0-{ { checksum "Gemfile.lock" }}
+        key: project-name-v1-{ { checksum "Gemfile.lock" }}
         paths:
           - vendor/bundle
 
